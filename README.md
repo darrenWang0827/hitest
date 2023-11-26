@@ -31,7 +31,8 @@ Test_cases_select_positive.py 编写一个类，继承unittest.TestCase(),文件
 5.  执行  
 方式一：单个测试用例的方法体内，右键执行  
 方式二：单个测试用例集文件的main方法处，右键开始执行该文件中所有测试用例  
-方式三：run_teprunner_regress.py 执行，该方法支持用例目录选择、用例标签列表筛选、用例文件匹配表达式筛选等，请仔细查看 
+方式三：run_teprunner_regress.py 执行，该方法支持用例目录选择、用例标签列表筛选、用例文件匹配表达式筛选等，请仔细查看  
+![pics](docs/pics/丰富用法.png) 
 6.  查看测试报告  
 方式三执行测试用例完毕后，程序会自动打开浏览器来展示测试用例执行结果  
 ![pics](docs/pics/测试报告.png)
