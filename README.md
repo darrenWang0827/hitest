@@ -38,6 +38,11 @@ Test_cases_select_positive.py 编写一个类，继承unittest.TestCase(),文件
 更多的工具包，放在util目录下了，可以自行查看。  
 您可以加上邮件通知、企业微信通知等功能
 
+#### 技术交流  
+本人QQ: 770230625
+本人wechat：darrenwang0827  
+欢迎来交流  
+
 #### 参与贡献
 
 1.  Fork 本仓库
