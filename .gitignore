@@ -136,3 +136,21 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# 以下是自定义添加的
+.idea/
+__pycache__/
+*/.pytest.cache/
+logs/
+history.json
+
+#先忽略ESS目录下所有
+/testcase/Teprunner/*
+#再不略某个目录
+#保持files空自录，可在files下创建，gitiqnore文件
+!/testcase/Teprunner/RegressTest
+#保持基准pdf文件结果目录baseFiles下的*.pdf，可先忽略baseFiles下所有
+/testcase/Teprunner/RegressTest/baseFiles/*
+#再不忽略baseFiles下*.pdf
+!/testcase/Teprunner/RegressTest/baseFiles/*.pdf
+
