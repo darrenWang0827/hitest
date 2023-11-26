@@ -39,7 +39,7 @@ Test_cases_select_positive.py 编写一个类，继承unittest.TestCase(),文件
 您可以加上邮件通知、企业微信通知等功能
 
 #### 技术交流  
-本人QQ: 770230625
+本人QQ: 770230625  
 本人wechat：darrenwang0827  
 欢迎来交流  
 
