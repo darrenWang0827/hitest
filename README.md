@@ -16,7 +16,7 @@
 
 前提说明：  
 本自动化测试工程，仅写了接口测试部分，管理台web和异步任务部分，请自行编写  
-测试目标平台是来自dongfanger的https://github.com/dongfanger/teprunner-backend.git，请自行安装部署，感谢dongfanger
+测试目标平台是来自dongfanger的https://github.com/dongfanger/teprunner-backend.git， 请自行安装部署，感谢dongfanger  
 具体使用：
 1.  配置项目  
 data.Teprunner_DataManager.py 中配置你项目相关的API地址、数据库配置，Teprunner是项目名称
