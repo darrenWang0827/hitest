@@ -9,7 +9,7 @@
 
 #### 安装教程
 
-1.  git clone https://gitee.com/darrenwangcheng0827/hitest.git
+1.  git clone https://github.com/darrenWang0827/hitest.git
 2.  pip3 install -r requirements.txt
 
 #### 使用说明
