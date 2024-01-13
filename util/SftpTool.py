@@ -1,4 +1,5 @@
 import paramiko
+import os
 
 class SFTP:
     __attrs__ = ["hostname","port","username","password","transport","sftp"]
@@ -10,7 +11,7 @@ class SFTP:
         self.password = password
 
     def __connect(self):
-        self.transport = paramiko.Transport((self.hostnameself.port))
+        self.transport = paramiko.Transport((self.hostname,self.port))
         self.transport.connect(username=self.username,password=self.password)
         self.sftp = paramiko.SFTPClient.from_transport(self.transport)
         return self.sftp
@@ -19,7 +20,26 @@ class SFTP:
         self.sftp.close()
         self.transport.close()
 
-    def put(self,local_file_path:str, remote_file_path:str):
+    def mkdir_p(self, path):
+        """
+        逸归创建日录
+        :param path: 日录名
+        """
+        if path == "/":
+            self.sftp.chdir('/')
+            return
+        if path == '':
+            return
+        try:
+            self.sftp.chdir(path)
+        except IOError:
+            dirname,basename = os.path.split(path.rstrip('/'))
+            self.mkdir_p(dirname)
+            self.sftp.mkdir(basename)
+            self.sftp.chdir(basename)
+        return True
+
+    def put(self,local_file_path:str, remote_file_path:str,dir_exist:bool = False):
         """
         上传文件
         :param local_file_path:
@@ -27,6 +47,9 @@ class SFTP:
         :return:
         """
         self.__connect()
+        if dir_exist:
+            dirpath = os.path.dirname(remote_file_path)
+            self.mkdir_p(dirpath)
         self.sftp.put(local_file_path,remote_file_path)
         self.__close()
 
@@ -41,4 +64,5 @@ class SFTP:
         self.sftp.get(remote_file_path,local_file_path)
         self.__close()
 
-sftp_hitest = SFTP(hostname="localhost",port=57000,username="sftp_hitest",password="qa123456")
+if __name__ == "__main__":
+    sftp_hitest = SFTP(hostname="localhost",port=57000,username="sftp_hitest",password="qa123456")
