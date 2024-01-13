@@ -8,7 +8,7 @@ DB_CONFIG = {
     "ip":"localhost",
     "port":3306,
     "user":"teprunner",
-    "password":"qa123456", # 密码请修改为自己的
+    "password":"Ch8d%hdhxt", # 密码请修改为自己的
     "database":"teprunner",
 }
 
