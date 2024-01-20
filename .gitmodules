@@ -1,0 +1,3 @@
+[submodule "hitest_tool"]
+	path = hitest_tool
+	url = https://github.com/darrenWang0827/hitest_tool.git
