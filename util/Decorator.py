@@ -47,7 +47,7 @@ def retry(reruns:int,reruns_delay:int,exception=(RetryFlag,)):
 def custom_skipUnless(tag_list):
     """
       功能：unittest用例过滤装饰器
-        使用：to1st是要给用例打标的标签列表，运行总运行文件时，可以填多个标签，执行命中这些标签的用例
+        使用：tag_list是要给用例打标的标签列表，运行总运行文件时，可以填多个标签，执行命中这些标签的用例
           sit用例：如23.10.17sit
         标金设规范：
           冒烟用例：如23.10.17smoke
