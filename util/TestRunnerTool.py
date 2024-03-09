@@ -9,7 +9,8 @@ from pathlib import Path
 from typing import Literal
 from jinja2 import Environment,FileSystemLoader
 
-from util.SftpTool import sftp_hitest
+from util.SftpTool import SFTP
+sftp_hitest = SFTP(hostname="localhost",port=57000,username="sftp_hitest",password="qa123456")
 
 class TestRunner:
     idc: str # 测试环境IDC
