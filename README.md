@@ -40,6 +40,13 @@ Test_cases_select_positive.py 编写一个类，继承unittest.TestCase(),文件
 更多的工具包，放在util目录下了，可以自行查看。  
 您可以加上邮件通知、企业微信通知等功能
 
+8.增加playwright框架测试web ui  
+安装框架：pip3 install playwright -i https://mirrors.aliyun.com/pypi/simple/
+安装浏览器驱动：playwright install
+录制脚本： cd D:\gitProjectsLearn\hitest\testcase\Teprunner\RegressTest\管理台; playwright codegen -o ./Test_record_demo.py --target python -b chromium  https://www.baidu.com/
+修改脚本添加断言：Test_record_demo.py 先叫脚本改成基于unittest框架的testcase的格式，然后在testcase中添加一些断言
+其他用法如模拟手机端等后续进行探索
+
 #### 技术交流  
 本人QQ: 770230625  
 本人wechat：darrenwang0827  
