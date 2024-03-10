@@ -14,7 +14,7 @@ CONSOLE_FORMAT = "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> " \
                 "<level>{level: ^}</level> | " \
                 "<level>{message}</Level>"
 
-def get_logger(level="DEBUG",path=None):
+def set_logger(level="DEBUG",path=None):
     logger.remove()
     logger.add(sink=sys.stdout,level=level,format=CONSOLE_FORMAT)
     if path:
@@ -29,4 +29,4 @@ def get_logger(level="DEBUG",path=None):
         )
     return logger
 
-
+logger = set_logger()
