@@ -3,6 +3,7 @@ from util.MysqlTool import Mysql
 from data.Teprunner_DataManager import API_BASE_URL,DB_CONFIG
 from typing import Dict
 import json
+from util.Logger import set_logger
 
 class TeprunnerBaseClient(object):
     """
@@ -19,6 +20,7 @@ class TeprunnerBaseClient(object):
     headers: Dict = {
         "content-type": "application/json",
     } # 请求头，每个resource可变化
+    logger = set_logger() # 这里要重设logger格式
 
     def __init__(self):
         res = self.post(url="/api/users/login",body={"username":"admin","password":"qa123456"})
@@ -30,7 +32,13 @@ class TeprunnerBaseClient(object):
         headers = headers if headers else self.headers
         params = params if params else self.params
         body = body if body else self.body
+        self.logger.info(f'开始发送get请求')
+        self.logger.info(f'url: {url}')
+        self.logger.info(f'headers: {json.dumps(headers)}')
+        self.logger.info(f'params: {json.dumps(params)}')
+        self.logger.info(f'body: {json.dumps(body)}')
         response = self.appClient.get(url = url,params=params,data=json.dumps(body),headers=headers)
+        self.logger.info(f'获取到response：{response.text}')
         ret = {
             "status_code": response.status_code,
             "data": ""
@@ -47,7 +55,13 @@ class TeprunnerBaseClient(object):
         headers = headers if headers else self.headers
         params = params if params else self.params
         body = body if body else self.body
+        self.logger.info(f'开始发送put请求')
+        self.logger.info(f'url: {url}')
+        self.logger.info(f'headers: {json.dumps(headers)}')
+        self.logger.info(f'params: {json.dumps(params)}')
+        self.logger.info(f'body: {json.dumps(body)}')
         response = self.appClient.put(url=url, params=params, data=json.dumps(body), headers=headers)
+        self.logger.info(f'获取到response：{response.text}')
         ret = {
             "status_code": response.status_code,
             "data": ""
@@ -64,7 +78,13 @@ class TeprunnerBaseClient(object):
         headers = headers if headers else self.headers
         params = params if params else self.params
         body = body if body else self.body
+        self.logger.info(f'开始发送post请求')
+        self.logger.info(f'url: {url}')
+        self.logger.info(f'headers: {json.dumps(headers)}')
+        self.logger.info(f'params: {json.dumps(params)}')
+        self.logger.info(f'body: {json.dumps(body)}')
         response = self.appClient.post(url=url, params=params, data=json.dumps(body), headers=headers)
+        self.logger.info(f'获取到response：{response.text}')
         ret = {
             "status_code": response.status_code,
             "data": ""
@@ -81,7 +101,13 @@ class TeprunnerBaseClient(object):
         headers = headers if headers else self.headers
         params = params if params else self.params
         body = body if body else self.body
+        self.logger.info(f'开始发送delete请求')
+        self.logger.info(f'url: {url}')
+        self.logger.info(f'headers: {json.dumps(headers)}')
+        self.logger.info(f'params: {json.dumps(params)}')
+        self.logger.info(f'body: {json.dumps(body)}')
         response = self.appClient.delete(url=url, params=params, data=json.dumps(body), headers=headers)
+        self.logger.info(f'获取到response：{response.text}')
         ret = {
             "status_code": response.status_code,
             "data": ""

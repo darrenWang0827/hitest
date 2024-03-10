@@ -2,6 +2,7 @@ from resource.Teprunner.Lib_api_teprunner_cases import Lib_api_teprunner_cases
 import unittest
 from util.Decorator import custom_skipUnless
 import copy
+from util.Logger import logger # 这里可以直接导入已设置好的logger
 
 class Test_cases_select_positive(unittest.TestCase):
     """
@@ -18,6 +19,7 @@ class Test_cases_select_positive(unittest.TestCase):
         lib_cases = Lib_api_teprunner_cases()
         # 查数据库获取要查的数据
         project_id = 1
+        logger.info('开始验证数据库')
         datas = lib_cases.dbClient.select(f"select * from `case` where project_id={project_id} limit 1")
         body = copy.deepcopy(lib_cases.body)
         # 可以修改原本定义的请求报文，实现不同场景的变化
